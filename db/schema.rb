@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_143947) do
   create_table "admin_items", force: :cascade do |t|
     t.integer "genre_id"
     t.string "name"
-    t.string "image"
+    t.string "cake_image"
     t.text "introduction"
     t.integer "price"
     t.boolean "is_active"
