@@ -3,7 +3,14 @@
   <p>商品画像</p><%= f.attachment_field :image %>
   <p>商品名</p>　<%= f.text_field :name %>
   <p>商品説明</p> <%= f.text_area :introduction %>
-  <p>ジャンル</p> 
+  <p>
+
+ <div class="field">
+   <%= f.label :genre %>
+    <%= f.select :gerne, ['チーズ', 'チョコ', 'フルーツ'], {include_blank: '---'} %>
+ </div>
+ 
+  </p>
   <p>税抜価格</p> <%= f.text_field :price %>
   <h4>販売ステータス</h4>　
   <%= f.submit '投稿' %>

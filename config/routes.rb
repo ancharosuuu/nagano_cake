@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   scope module: :admin do
     devise_for :admin, controllers: {
       sessions: 'admin/sessions',
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
       
     devise_for :admin
     resources :items, only: [:new, :create, :index, :show, :destroy]
-    
+    resources :genres
   end
   
   devise_for :customers
