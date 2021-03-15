@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     devise_for :admin
     resources :items, only: [:new, :create, :index, :show, :destroy]
     resources :genres
+    post 'admin/genres/:id/edit' => 'admin_genres#edit'
   end
   
   devise_for :customers

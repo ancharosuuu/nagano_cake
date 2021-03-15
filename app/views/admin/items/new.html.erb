@@ -1,17 +1,27 @@
 <h1>商品新規登録</h1>
 <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
   <p>商品画像</p><%= f.attachment_field :image %>
-  <p>商品名</p>　<%= f.text_field :name %>
-  <p>商品説明</p> <%= f.text_area :introduction %>
+  <p>商品名</p><%= f.text_field :name %>
+  <p>商品説明</p><%= f.text_area :introduction %>
   <p>
 
  <div class="field">
    <%= f.label :genre %>
-    <%= f.select :gerne, ['チーズ', 'チョコ', 'フルーツ'], {include_blank: '---'} %>
+   <%= f.select :genre_id, Genre.all.map { |genre| [genre.name, genre.id] }  %>
  </div>
  
   </p>
   <p>税抜価格</p> <%= f.text_field :price %>
   <h4>販売ステータス</h4>　
   <%= f.submit '投稿' %>
+  
+
+
+<div class ="table">
+ <% @genres.each do |genre| %>
+   <%= genre.name  %> <%= link_to "編集", edit_admin_genre_path(genre) %>
+ <% end %>
+</div>
+  
+  
 <% end %>
