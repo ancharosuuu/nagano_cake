@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :admin do
       
     devise_for :admin
-    resources :items, only: [:new, :create, :index, :show, :destroy]
+    resources :items, only: [:new, :create, :index, :show, :edit, :update, :destroy]
     resources :genres
     post 'admin/genres/:id/edit' => 'admin_genres#edit'
   end

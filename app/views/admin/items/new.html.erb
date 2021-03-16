@@ -12,14 +12,16 @@
  
   </p>
   <p>税抜価格</p> <%= f.text_field :price %>
-  <h4>販売ステータス</h4>　
+   <h4>販売ステータス</h4>
+  <label><%= f.radio_button :is_active, "販売中" %>販売中</label>
+  <label><%= f.radio_button :is_active, "販売停止中" %>販売停止中</label>
   <%= f.submit '投稿' %>
   
 
 
 <div class ="table">
- <% @genres.each do |genre| %>
-   <%= genre.name  %> <%= link_to "編集", edit_admin_genre_path(genre) %>
+ <% @items.each do |item| %>
+   <li><%= @item.name  %> <%= link_to "編集", edit_admin_item_path(item) %></li>
  <% end %>
 </div>
   
