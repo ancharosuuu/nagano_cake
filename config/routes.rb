@@ -16,13 +16,15 @@ Rails.application.routes.draw do
     post 'admin/genres/:id/edit' => 'admin_genres#edit'
   end
   
-  devise_for :customers
+  
   
   root to: 'homes#top'
   resource :customers, only: [:show, :edit, :update]
   get  "/about" => "homes#about"
   get "/customers/my_page" => "customers#show"
   
+  devise_for :customers
+ 
   resources :items
   get "/items" => "items#index"
   
