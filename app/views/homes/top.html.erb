@@ -6,3 +6,9 @@
 </p>
 
 <h2>新着商品</h2>
+<% @items.each do |item| %>
+<%= attachment_image_tag item, :image, :fill, 300, 200 %>
+<%= item.name %>
+<%= (item.price * @tax.round(1)).ceil %>
+
+<% end %>

@@ -1,8 +1,10 @@
 class HomesController < ApplicationController
  def top
- end
- 
+  @tax = 1.1
+  @items = Item.all
+ end 
  def about
  end
+ 
  
 end

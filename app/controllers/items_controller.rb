@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   def show
     @tax = 1.1
     @item = Item.find(params[:id])
+    @cart_item = CartItem.new
   end
 
   def edit
