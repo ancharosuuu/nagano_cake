@@ -17,14 +17,14 @@ class AddressesController < ApplicationController
  def update
   address = Address.find(params[:id])
   address.update(address_params)
-  redirect_to address_path(@address)
+  redirect_to addresses_path
  end
  
  def destroy
     @address = Address.find(params[:id])
     @address.destroy
-    redirect_to address_path
-  end
+    redirect_to address_path(@address)
+ end
  
  private
  def address_params

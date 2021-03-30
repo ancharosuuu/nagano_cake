@@ -43,9 +43,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :order_details
   
-  get '/address' => 'addresses#index'
-  post '/address' => 'addresses#create'
-  
+
   resources :addresses
   
  end

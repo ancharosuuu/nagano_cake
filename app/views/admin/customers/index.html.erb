@@ -11,11 +11,11 @@
 <tbody>
    <% @customers.each do |customer| %>
   <tr>
-    <td></td>
+    <td><%= customer.id %></td>
     <td>
-    <%= @customer.last_name %>
+    <%= customer.last_name %>
     </td>
-    <td><%= @customer.email %></td>
+    <td><%= customer.email %></td>
     <td>まだできてない</td>
  </tr>
   <% end %>

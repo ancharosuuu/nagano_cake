@@ -1,5 +1,5 @@
 <h1>配送先登録/一覧</h1>
-<%= form_with model:@address, url: address_path(@address), local:true do |f| %>
+<%= form_with model:@address, url: addresses_path, local:true do |f| %>
 <p>郵便番号<%= f.text_field :postal_cade, autofocus: true %></p>
 <p>住所<%= f.text_field :address, autofocus: true %></p>
 <p>宛名<%= f.text_field :name, autofocus: true %></p>

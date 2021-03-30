@@ -1,7 +1,6 @@
 class Admin::CustomersController < ApplicationController
   def index
       @customers = Customer.all
-      @customer = Customer.find(cutsomer_params)
   end
   
   def show
