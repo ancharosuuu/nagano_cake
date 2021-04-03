@@ -5,4 +5,10 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :cart_items
+  
+  enum is_active: {
+    
+    "有効":true, "退会":false
+    
+  }
 end

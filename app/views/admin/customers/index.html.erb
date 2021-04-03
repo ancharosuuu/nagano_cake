@@ -13,10 +13,12 @@
   <tr>
     <td><%= customer.id %></td>
     <td>
-    <%= customer.last_name %>
+     <%= link_to admin_customer_path(customer) do %>
+    <%= customer.last_name %><%= customer.first_name %>
+    <% end %>
     </td>
     <td><%= customer.email %></td>
-    <td>まだできてない</td>
+    <td><%= customer.is_deleted %></td>
  </tr>
   <% end %>
 </tbody>

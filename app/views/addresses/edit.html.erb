@@ -1,5 +1,5 @@
 <h1>配送先編集</h1>
-<%= form_with model:@address, url: address_path(@address), local:true do |f| %>
+<%= form_with model:@address, url: addresses_path, local:true do |f| %>
 <table>
     <tr>
         <th>郵便番号（ハイフンなし）</th><td><%= f.text_field :postal_cade %></td>

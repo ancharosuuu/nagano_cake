@@ -3,7 +3,14 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.find(params[:id])
+    @order = Order.new
+    @customer = current_customer
+  end
+  
+  def create
+    @order = Order.new
+    @order.save
+    redirect_to orders_path
   end
 
   def show
