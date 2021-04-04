@@ -40,7 +40,11 @@ Rails.application.routes.draw do
   post '/cart_item' => 'cart_items#index'
   post '/cart_items/:id' => 'cart_items#update'
   
+  post 'orders/confirm' => 'orders#confirm'
   resources :orders
+
+
+  
   resources :order_details
   
 

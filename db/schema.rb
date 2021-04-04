@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(version: 2021_03_28_123411) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"
-    t.string "postal_cade"
+    t.string "postal_code"
     t.string "address"
     t.string "name"
-    t.integer "shopping_cost"
+    t.integer "shipping_cost"
     t.integer "total_payment"
     t.integer "payment_method"
     t.integer "status"

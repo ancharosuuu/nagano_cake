@@ -1,5 +1,5 @@
 <h1>注文情報入力</h1>
-<%= form_with model: @orders, url: orders_path, local:true do |f| %>
+<%= form_with model: @order, url: orders_confirm_path, local:true do |f| %>
 <h2>支払い方法</h2>
 <%= f.radio_button :payment_method, "クレジット" %>
 <%= f.label :payment_method, "クレジット", {value: :credit, style: "display: inline-block;"} %>
@@ -20,11 +20,10 @@
 <br>
 <%= f.radio_button :address_option, 2 %>
 <%= f.label :address, "新しいお届け先" %>
-
-<p>郵便番号<%= f.text_field :postal_cade, autofocus: true %></p>
+<p>郵便番号<%= f.text_field :postal_code, autofocus: true %></p>
 <p>住所<%= f.text_field :address, autofocus: true %></p>
 <p>宛名<%= f.text_field :name, autofocus: true %></p>
-<%= f.submit "新規登録" %> 
+<%= f.submit "確認画面に進む" %> 
 
 
 <% end %>
