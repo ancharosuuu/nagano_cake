@@ -8,19 +8,27 @@ class OrdersController < ApplicationController
   end
   
   def confirm
+      @tax = 1.1
+      @order = Order.new
+      @order.payment_method = params[:order][:payment_method]
+      @cart_items = current_customer.cart_items
+
+ 
     if params[:order][:address_option] == "1"
-   #まだ記述できてない
+    @addresses = current_customer.addresses.find(params[:order][:addresses])
+    @order.address = @addresses.address
+    @order.name = @addresses.name
+    @order.postal_code = @addresses.postal_cade
+   
     
     
     elsif params[:order][:address_option] == "2"
-      @order = Order.new
       @order.postal_code = params[:order][:postal_code]  
       @order.address = params[:order][:address]  
       @order.name = params[:order][:name]
     
-    else
+    elsif params[:order][:address_option] == "0"
       
-    @orders = Order.all
     @order = Order.new(order_comfirm_params) 
     @order.total_payment = 100 #あとで計算する
     @order.shipping_cost = 800

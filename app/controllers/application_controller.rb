@@ -2,17 +2,16 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  helper_method :current_cart
+  # helper_method :current_cart_items
 
-
-  def current_cart_items
-    if session[:id]
-      @cart_item = CartItem.find(session[:id])
-    else
-      @cart_item = CartItem.create
-      session[:id] = @cart_item.id
-    end
-  end
+  # def current_cart_items
+  #   if session[:id]
+  #     @cart_item = CartItem.find(session[:id])
+  #   else
+  #     @cart_item = CartItem.create
+  #     session[:id] = @cart_item.id
+  #   end
+  # end
 
   protected
 
